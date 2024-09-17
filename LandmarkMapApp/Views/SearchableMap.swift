@@ -6,10 +6,91 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct SearchableMap: View {
+    @State private var position = MapCameraPosition.automatic
+    @State private var searchResults = [SearchResult]()
+    @State private var selectedLocation: SearchResult?
+    @State private var isSheetPresented: Bool = true
+    @State private var scene: MKLookAroundScene?
+    @State private var result: String = ""
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            mapLayer
+            .sheet(isPresented: $isSheetPresented) {
+                SheetView(result: $result, searchResults: $searchResults)
+        }
+            saveButton
+            
+            
+        }
+    }
+
+    private func fetchScene(for coordinate: CLLocationCoordinate2D) async throws -> MKLookAroundScene? {
+        let lookAroundScene = MKLookAroundSceneRequest(coordinate: coordinate)
+        return try await lookAroundScene.scene
+    }
+}
+
+extension SearchableMap {
+    private var mapLayer: some View {
+        Map(position: $position, selection: $selectedLocation) {
+            ForEach(searchResults) { result in
+                Marker(coordinate: result.location) {
+                    VStack {
+                        Image(systemName: "mappin")
+                        Text(self.result)
+                    }
+                }
+                .tag(result)
+            }
+        }
+        .overlay(alignment: .bottom) {
+            if selectedLocation != nil {
+                LookAroundPreview(scene: $scene, allowsNavigation: false, badgePosition: .bottomTrailing)
+                    .frame(height: 150)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .safeAreaPadding(.bottom, 40)
+                    .padding(.horizontal, 20)
+            }
+        }
+        .ignoresSafeArea()
+        .onChange(of: selectedLocation) {
+            if let selectedLocation {
+                Task {
+                    scene = try? await fetchScene(for: selectedLocation.location)
+                }
+            }
+            isSheetPresented = selectedLocation == nil
+        }
+        .onChange(of: searchResults) {
+            if let firstResult = searchResults.first, searchResults.count == 1 {
+                selectedLocation = firstResult
+            }
+        }
+    }
+    
+    private var saveButton: some View {
+        VStack {
+            HStack {
+                Spacer()
+                
+                Button(action: {}, label: {
+                    HStack {
+                        Image(systemName: "book")
+                        Text("Save")
+                            .font(.headline)
+                    }
+                    .frame(width: 125, height: 35)
+                })
+                .buttonStyle(.borderedProminent)
+            }
+            .padding()
+            
+            Spacer()
+        }
     }
 }
 

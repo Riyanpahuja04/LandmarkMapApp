@@ -1,8 +1,18 @@
-//
-//  PlacesApiModels.swift
-//  LandmarkMapApp
-//
-//  Created by Riyan Pahuja on 15/9/2024.
-//
+struct LocationRestriction: Codable {
+    let circle: Circle
+}
 
-import Foundation
+struct Circle: Codable {
+    let center: Center
+    let radius: Double
+}
+
+struct Center: Codable {
+    let latitude: Double
+    let longitude: Double
+}
+
+struct NearbySearchRequest: Codable {
+    let locationRestriction: LocationRestriction
+    let includedTypes: [String]
+}

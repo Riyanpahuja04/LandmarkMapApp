@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct LandmarkMapAppApp: App {
+    
+    @StateObject private var lvm = LocationsViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LocationsView()
+                .environmentObject(lvm)
         }
     }
 }

@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class JournalViewModel: ObservableObject {
+    @Published var savedLocations: [Location] = []
+    
+    func saveLocation (_ location: Location) {
+        savedLocations.append(location)
+    }
+}
