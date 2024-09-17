@@ -6,11 +6,21 @@
 //
 
 import Foundation
+import SwiftUI
 
 class JournalViewModel: ObservableObject {
-    @Published var savedLocations: [Location] = []
+    @Published var savedJournals: [Journal] = []
+    @Published var showJournalEntry: Bool = false
+    @Published var currentSelectedLocation: Pin?
     
-    func saveLocation (_ location: Location) {
-        savedLocations.append(location)
+    func saveJournal (notes: String, images: [UIImage]) {
+        let imageData = images.compactMap { $0.jpegData(compressionQuality: 0.8) }
+        let journal = Journal(location: currentSelectedLocation!, notes: notes, images: imageData)
+        savedJournals.append(journal)
+    }
+    
+    func saveButtonPressed(withLocation location: Pin){
+        showJournalEntry = true
+        currentSelectedLocation = location
     }
 }

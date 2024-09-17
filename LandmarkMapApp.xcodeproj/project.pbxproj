@@ -27,6 +27,12 @@
 		B3542F082C9811BE006AE9DB /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F072C9811BE006AE9DB /* SheetView.swift */; };
 		B3542F0A2C9814AA006AE9DB /* SearchableMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F092C9814AA006AE9DB /* SearchableMap.swift */; };
 		B3542F0C2C982242006AE9DB /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F0B2C982242006AE9DB /* JournalViewModel.swift */; };
+		B3542F0E2C991858006AE9DB /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F0D2C991858006AE9DB /* Pin.swift */; };
+		B3542F102C991C63006AE9DB /* NewJournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F0F2C991C63006AE9DB /* NewJournalEntryView.swift */; };
+		B3542F122C992273006AE9DB /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F112C992273006AE9DB /* ImagePickerView.swift */; };
+		B3542F142C99275A006AE9DB /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F132C99275A006AE9DB /* Journal.swift */; };
+		B3542F162C9934D1006AE9DB /* JournalEntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F152C9934D1006AE9DB /* JournalEntryListView.swift */; };
+		B3542F182C993C40006AE9DB /* JournalDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F172C993C40006AE9DB /* JournalDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +58,12 @@
 		B3542F072C9811BE006AE9DB /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		B3542F092C9814AA006AE9DB /* SearchableMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableMap.swift; sourceTree = "<group>"; };
 		B3542F0B2C982242006AE9DB /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
+		B3542F0D2C991858006AE9DB /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		B3542F0F2C991C63006AE9DB /* NewJournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJournalEntryView.swift; sourceTree = "<group>"; };
+		B3542F112C992273006AE9DB /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		B3542F132C99275A006AE9DB /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		B3542F152C9934D1006AE9DB /* JournalEntryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryListView.swift; sourceTree = "<group>"; };
+		B3542F172C993C40006AE9DB /* JournalDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +122,8 @@
 			children = (
 				B3542EEB2C92DE02006AE9DB /* Location.swift */,
 				B3542F032C967738006AE9DB /* PlacesApiModels.swift */,
+				B3542F0D2C991858006AE9DB /* Pin.swift */,
+				B3542F132C99275A006AE9DB /* Journal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,6 +138,10 @@
 				B3542EFA2C9493BF006AE9DB /* LocationDetailView.swift */,
 				B3542F072C9811BE006AE9DB /* SheetView.swift */,
 				B3542F092C9814AA006AE9DB /* SearchableMap.swift */,
+				B3542F0F2C991C63006AE9DB /* NewJournalEntryView.swift */,
+				B3542F112C992273006AE9DB /* ImagePickerView.swift */,
+				B3542F152C9934D1006AE9DB /* JournalEntryListView.swift */,
+				B3542F172C993C40006AE9DB /* JournalDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,13 +239,19 @@
 			files = (
 				B3542F0C2C982242006AE9DB /* JournalViewModel.swift in Sources */,
 				B3542F002C9672E1006AE9DB /* PlacesViewModel.swift in Sources */,
+				B3542F0E2C991858006AE9DB /* Pin.swift in Sources */,
 				B3542EEF2C92DF20006AE9DB /* LocationsDataService.swift in Sources */,
+				B3542F122C992273006AE9DB /* ImagePickerView.swift in Sources */,
 				B3542F042C967738006AE9DB /* PlacesApiModels.swift in Sources */,
 				B3542F022C967302006AE9DB /* PlacesAPI.swift in Sources */,
+				B3542F182C993C40006AE9DB /* JournalDetailsView.swift in Sources */,
+				B3542F142C99275A006AE9DB /* Journal.swift in Sources */,
 				B3542EF92C9490B6006AE9DB /* LocationMapAnnotationView.swift in Sources */,
+				B3542F162C9934D1006AE9DB /* JournalEntryListView.swift in Sources */,
 				B3542EF52C92EBDE006AE9DB /* LocationsListView.swift in Sources */,
 				B3542EF32C92E2C2006AE9DB /* LocationsViewModel.swift in Sources */,
 				B3542F0A2C9814AA006AE9DB /* SearchableMap.swift in Sources */,
+				B3542F102C991C63006AE9DB /* NewJournalEntryView.swift in Sources */,
 				B3542F062C980FC9006AE9DB /* LocationService.swift in Sources */,
 				B3542EF72C941707006AE9DB /* LocationPreview.swift in Sources */,
 				B3542EFE2C967247006AE9DB /* Network.swift in Sources */,

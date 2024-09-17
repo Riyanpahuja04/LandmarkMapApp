@@ -9,20 +9,26 @@ import SwiftUI
 import MapKit
 
 struct SearchableMap: View {
+    @EnvironmentObject var jvm: JournalViewModel
     @State private var position = MapCameraPosition.automatic
     @State private var searchResults = [SearchResult]()
     @State private var selectedLocation: SearchResult?
     @State private var isSheetPresented: Bool = true
     @State private var scene: MKLookAroundScene?
-    @State private var result: String = ""
-
+    @State private var result: Pin = .init(name: "", coordinates: CLLocationCoordinate2D())
+    @State private var isJournalListPresented: Bool = false
+    
     var body: some View {
         ZStack {
             mapLayer
             .sheet(isPresented: $isSheetPresented) {
                 SheetView(result: $result, searchResults: $searchResults)
         }
-            saveButton
+            if self.result.name != "" {
+                saveButton
+            }
+            
+            journalsButton
             
             
         }
@@ -41,7 +47,7 @@ extension SearchableMap {
                 Marker(coordinate: result.location) {
                     VStack {
                         Image(systemName: "mappin")
-                        Text(self.result)
+                        Text(self.result.name)
                     }
                 }
                 .tag(result)
@@ -77,13 +83,11 @@ extension SearchableMap {
             HStack {
                 Spacer()
                 
-                Button(action: {}, label: {
-                    HStack {
-                        Image(systemName: "book")
-                        Text("Save")
-                            .font(.headline)
-                    }
-                    .frame(width: 125, height: 35)
+                Button(action: {
+                    jvm.saveButtonPressed(withLocation: self.result)
+                }, label: {
+                        Image(systemName: "note.text.badge.plus")
+                            .frame(width: 35, height: 35)
                 })
                 .buttonStyle(.borderedProminent)
             }
@@ -91,9 +95,35 @@ extension SearchableMap {
             
             Spacer()
         }
+        .sheet(isPresented: $jvm.showJournalEntry, content: {
+            NewJournalEntryView()
+        })
+    }
+    
+    private var journalsButton: some View {
+        VStack {
+            HStack {
+                Button(action: {
+                    isJournalListPresented.toggle()
+                }, label: {
+                        Image(systemName: "note")
+                    .frame(width: 35, height: 35)
+                })
+                .buttonStyle(.borderedProminent)
+                
+                Spacer()
+            }
+            .padding()
+            
+            Spacer()
+        }
+        .sheet(isPresented: $isJournalListPresented, content: {
+            JournalEntryListView()
+        })
     }
 }
 
 #Preview {
     SearchableMap()
+        .environmentObject(JournalViewModel())
 }

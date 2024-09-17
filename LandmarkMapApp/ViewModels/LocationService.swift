@@ -53,23 +53,21 @@ class LocationService: NSObject, ObservableObject, MKLocalSearchCompleterDelegat
     }
     
     func search(with query: String, coordinate: CLLocationCoordinate2D? = nil) async throws -> [SearchResult] {
-            let mapKitRequest = MKLocalSearch.Request()
-            mapKitRequest.naturalLanguageQuery = query
-            mapKitRequest.resultTypes = .pointOfInterest
+        let mapKitRequest = MKLocalSearch.Request()
+        mapKitRequest.naturalLanguageQuery = query
+        mapKitRequest.resultTypes = .pointOfInterest
         
-        withAnimation(.easeInOut) {
-                if let coordinate {
-                    mapKitRequest.region = .init(.init(origin: .init(coordinate), size: .init(width: 1, height: 1)))
-                }
-            }
-            let search = MKLocalSearch(request: mapKitRequest)
-
-            let response = try await search.start()
-
-            return response.mapItems.compactMap { mapItem in
-                guard let location = mapItem.placemark.location?.coordinate else { return nil }
-
-                return .init(location: location)
-            }
+        if let coordinate {
+            mapKitRequest.region = .init(.init(origin: .init(coordinate), size: .init(width: 1, height: 1)))
         }
+        let search = MKLocalSearch(request: mapKitRequest)
+        
+        let response = try await search.start()
+        
+        return response.mapItems.compactMap { mapItem in
+            guard let location = mapItem.placemark.location?.coordinate else { return nil }
+            
+            return .init(location: location)
+        }
+    }
 }

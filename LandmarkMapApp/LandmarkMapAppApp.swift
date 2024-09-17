@@ -10,12 +10,12 @@ import SwiftUI
 @main
 struct LandmarkMapAppApp: App {
     
-    @StateObject private var lvm = LocationsViewModel()
+    @StateObject private var jvm = JournalViewModel()
     
     var body: some Scene {
         WindowGroup {
-            LocationsView()
-                .environmentObject(lvm)
+            SearchableMap()
+                .environmentObject(jvm)
         }
     }
 }

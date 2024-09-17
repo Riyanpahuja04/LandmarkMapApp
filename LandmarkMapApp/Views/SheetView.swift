@@ -4,7 +4,7 @@ import MapKit
 struct SheetView: View {
     @State private var locationService = LocationService(completer: .init())
     @State private var search: String = ""
-    @Binding var result: String
+    @Binding var result: Pin
     @Binding var searchResults: [SearchResult]
 
     var body: some View {
@@ -61,7 +61,8 @@ struct SheetView: View {
             Task {
                 if let singleLocation = try? await locationService.search(with: "\(completion.title) \(completion.subTitle)").first {
                     searchResults = [singleLocation]
-                    result = completion.title
+                    result.coordinates = singleLocation.location
+                    result.name = completion.title
                 }
         }
     }
