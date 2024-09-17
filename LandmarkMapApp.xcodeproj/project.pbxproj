@@ -23,6 +23,7 @@
 		B3542F182C993C40006AE9DB /* JournalDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F172C993C40006AE9DB /* JournalDetailsView.swift */; };
 		B3542F1A2C99499E006AE9DB /* SearchCompletions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F192C99499E006AE9DB /* SearchCompletions.swift */; };
 		B3542F1C2C9949B9006AE9DB /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F1B2C9949B9006AE9DB /* SearchResult.swift */; };
+		B3542F1E2C994DD0006AE9DB /* MapRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F1D2C994DD0006AE9DB /* MapRelation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B3542F172C993C40006AE9DB /* JournalDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailsView.swift; sourceTree = "<group>"; };
 		B3542F192C99499E006AE9DB /* SearchCompletions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCompletions.swift; sourceTree = "<group>"; };
 		B3542F1B2C9949B9006AE9DB /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		B3542F1D2C994DD0006AE9DB /* MapRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRelation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				B3542F132C99275A006AE9DB /* Journal.swift */,
 				B3542F192C99499E006AE9DB /* SearchCompletions.swift */,
 				B3542F1B2C9949B9006AE9DB /* SearchResult.swift */,
+				B3542F1D2C994DD0006AE9DB /* MapRelation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			files = (
 				B3542F0C2C982242006AE9DB /* JournalViewModel.swift in Sources */,
 				B3542F0E2C991858006AE9DB /* Pin.swift in Sources */,
+				B3542F1E2C994DD0006AE9DB /* MapRelation.swift in Sources */,
 				B3542F122C992273006AE9DB /* ImagePickerView.swift in Sources */,
 				B3542F182C993C40006AE9DB /* JournalDetailsView.swift in Sources */,
 				B3542F142C99275A006AE9DB /* Journal.swift in Sources */,

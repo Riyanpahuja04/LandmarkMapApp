@@ -8,9 +8,9 @@
 import Foundation
 import MapKit
 
-struct SearchResult: Identifiable, Hashable {
+struct SearchResult: Identifiable, Hashable, MapRelation {
     let id = UUID()
-    let location: CLLocationCoordinate2D
+    var location: CLLocationCoordinate2D
 
     static func == (lhs: SearchResult, rhs: SearchResult) -> Bool {
         lhs.id == rhs.id

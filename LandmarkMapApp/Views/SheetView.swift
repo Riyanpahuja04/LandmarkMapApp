@@ -61,7 +61,7 @@ struct SheetView: View {
             Task {
                 if let singleLocation = try? await locationService.search(with: "\(completion.title) \(completion.subTitle)").first {
                     searchResults = [singleLocation]
-                    result.coordinates = singleLocation.location
+                    result.location = singleLocation.location
                     result.name = completion.title
                 }
         }

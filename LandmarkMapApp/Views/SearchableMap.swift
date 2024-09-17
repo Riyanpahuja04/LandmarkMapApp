@@ -15,7 +15,7 @@ struct SearchableMap: View {
     @State private var selectedLocation: SearchResult?
     @State private var isSheetPresented: Bool = true
     @State private var scene: MKLookAroundScene?
-    @State private var result: Pin = .init(name: "", coordinates: CLLocationCoordinate2D())
+    @State private var result: Pin = .init(name: "", location: CLLocationCoordinate2D())
     @State private var isJournalListPresented: Bool = false
     
     var body: some View {

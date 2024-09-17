@@ -8,8 +8,8 @@
 import Foundation
 import MapKit
 
-struct Pin: Identifiable {
+struct Pin: Identifiable, MapRelation {
     let id = UUID().uuidString
     var name: String
-    var coordinates: CLLocationCoordinate2D
+    var location: CLLocationCoordinate2D
 }
