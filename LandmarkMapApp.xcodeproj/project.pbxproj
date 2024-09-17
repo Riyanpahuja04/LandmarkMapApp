@@ -21,6 +21,8 @@
 		B3542F142C99275A006AE9DB /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F132C99275A006AE9DB /* Journal.swift */; };
 		B3542F162C9934D1006AE9DB /* JournalEntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F152C9934D1006AE9DB /* JournalEntryListView.swift */; };
 		B3542F182C993C40006AE9DB /* JournalDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F172C993C40006AE9DB /* JournalDetailsView.swift */; };
+		B3542F1A2C99499E006AE9DB /* SearchCompletions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F192C99499E006AE9DB /* SearchCompletions.swift */; };
+		B3542F1C2C9949B9006AE9DB /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3542F1B2C9949B9006AE9DB /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		B3542F132C99275A006AE9DB /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		B3542F152C9934D1006AE9DB /* JournalEntryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryListView.swift; sourceTree = "<group>"; };
 		B3542F172C993C40006AE9DB /* JournalDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailsView.swift; sourceTree = "<group>"; };
+		B3542F192C99499E006AE9DB /* SearchCompletions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCompletions.swift; sourceTree = "<group>"; };
+		B3542F1B2C9949B9006AE9DB /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 			children = (
 				B3542F0D2C991858006AE9DB /* Pin.swift */,
 				B3542F132C99275A006AE9DB /* Journal.swift */,
+				B3542F192C99499E006AE9DB /* SearchCompletions.swift */,
+				B3542F1B2C9949B9006AE9DB /* SearchResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,8 +204,10 @@
 				B3542F122C992273006AE9DB /* ImagePickerView.swift in Sources */,
 				B3542F182C993C40006AE9DB /* JournalDetailsView.swift in Sources */,
 				B3542F142C99275A006AE9DB /* Journal.swift in Sources */,
+				B3542F1A2C99499E006AE9DB /* SearchCompletions.swift in Sources */,
 				B3542F162C9934D1006AE9DB /* JournalEntryListView.swift in Sources */,
 				B3542F0A2C9814AA006AE9DB /* SearchableMap.swift in Sources */,
+				B3542F1C2C9949B9006AE9DB /* SearchResult.swift in Sources */,
 				B3542F102C991C63006AE9DB /* NewJournalEntryView.swift in Sources */,
 				B3542F062C980FC9006AE9DB /* LocationService.swift in Sources */,
 				B3542EDB2C92DC96006AE9DB /* ContentView.swift in Sources */,

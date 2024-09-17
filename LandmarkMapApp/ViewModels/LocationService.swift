@@ -1,27 +1,6 @@
 import MapKit
 import SwiftUI
 
-struct SearchCompletions: Identifiable {
-    let id = UUID()
-    let title: String
-    let subTitle: String
-    // New property to hold the URL if it exists
-    var url: URL?
-}
-
-struct SearchResult: Identifiable, Hashable {
-    let id = UUID()
-    let location: CLLocationCoordinate2D
-
-    static func == (lhs: SearchResult, rhs: SearchResult) -> Bool {
-        lhs.id == rhs.id
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
 
 class LocationService: NSObject, ObservableObject, MKLocalSearchCompleterDelegate {
     private let completer: MKLocalSearchCompleter

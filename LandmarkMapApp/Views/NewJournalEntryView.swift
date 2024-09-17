@@ -49,8 +49,6 @@ struct NewJournalEntryView: View {
                     }
                     .padding(.horizontal)
                     
-                    // Button to trigger the image picker
-                    
                     // Image Carousel
                     if !selectedImages.isEmpty {
                         ScrollView(.horizontal, showsIndicators: false) {

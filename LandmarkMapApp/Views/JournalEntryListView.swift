@@ -39,7 +39,7 @@ struct JournalEntryListView: View {
                                     Text(journal.location.name)
                                         .font(.headline)
                                         .frame(maxWidth: .infinity, alignment: .leading)
-                                //this frame is necessary to avoid any rendering issue if the names become too big
+                                        //this frame is necessary to avoid any rendering issue if the names become too big
                         }
                         }
                         

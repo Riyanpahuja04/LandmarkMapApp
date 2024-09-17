@@ -27,8 +27,9 @@ struct JournalDetailsView: View {
                 Text("Images")
                     .font(.title3)
                     .fontWeight(.black)
-                .foregroundStyle(.primary)
-            
+                    .foregroundStyle(.primary)
+                    .padding(.horizontal)
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
                         ForEach(journal.images, id: \.self) { image in
@@ -55,7 +56,7 @@ struct JournalDetailsView: View {
                 TextEditor(text: .constant(journal.notes))
                     .frame(height: 200)
                     .background(RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.black, lineWidth: 1))
+                        .stroke(Color.black, lineWidth: 1))
                     .cornerRadius(10)
                     .shadow(radius: 5)
             }
@@ -63,9 +64,3 @@ struct JournalDetailsView: View {
         }
     }
 }
-
-//#Preview {
-//    NavigationStack {
-//        JournalDetailsView()
-//    }
-//}
