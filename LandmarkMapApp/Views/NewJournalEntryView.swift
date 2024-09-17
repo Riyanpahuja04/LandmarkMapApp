@@ -14,7 +14,7 @@ struct NewJournalEntryView: View {
     @State private var selectedImages: [UIImage] = []
     @State private var isPickerPresented = false
     @Environment(\.dismiss) private var dismissSheet
-    
+    @State var showAlert: Bool = false
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -23,6 +23,7 @@ struct NewJournalEntryView: View {
                     .fontWeight(.black)
                     .foregroundStyle(.primary)
                     .frame(height: 55)
+                    .padding()
                     .frame(maxWidth: .infinity)
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(10)
@@ -99,8 +100,12 @@ struct NewJournalEntryView: View {
                 .padding()
                 
                 Button(action: {
-                    jvm.saveJournal(notes: notes, images: selectedImages)
-                    dismissSheet()
+                    if(notes != "" && !selectedImages.isEmpty) {
+                        jvm.saveJournal(notes: notes, images: selectedImages)
+                        dismissSheet()
+                    } else {
+                        showAlert = true
+                    }
                 }
                 ) {
                     Text("Save Journal")
@@ -114,6 +119,9 @@ struct NewJournalEntryView: View {
                 .buttonStyle(.plain)
                     
             }
+            .alert(isPresented: $showAlert, content: {
+                Alert(title: Text("OOPs 😬"), message: Text("Please upload atleast 1 image and add a note"))
+            })
             .navigationTitle("New Journal")
             .navigationBarTitleDisplayMode(.inline)
         }
